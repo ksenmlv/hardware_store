@@ -1,0 +1,131 @@
+//вкладка регистрации
+.registr_full {
+    display: flex;
+    flex-direction: column;
+    height: 1100px;
+}
+
+.strelka{
+    height: 80px;
+    margin-top: 85px;
+    margin-right: 1150px;
+  }
+
+.picture2{
+    position: relative;
+    margin-left: 150px;
+    margin-top: 250px;
+
+    img{
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+
+.registration{
+    margin-left: 150px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    
+    //надпись "Регистрация"
+    h1{
+        margin-top: 80px;
+        margin-bottom: 70px;
+        font-size: 70px;
+        color: #435673;
+    }
+
+    //поля ввода
+    input{
+        height: 50px;
+        width: 350px;
+        color: #3C495C;
+        border-style: solid;
+        border-color: rgba(60, 73, 92, 0.5);
+        border-radius: 10px;
+        box-sizing: border-box; /* Включает padding в общую ширину */
+        margin-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+    //кнопка регистрации
+    .btn_registr{
+        position: relative;
+        height: 60px;
+        width: 350px;
+        color: white;
+        border-style: solid;
+        border-color: rgba(60, 73, 92, 0.5);
+        border-radius: 25px;
+        box-sizing: border-box;
+        margin-top: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #435673;
+    }
+
+    .btn_registr:hover{
+        border-width: 2px;
+        border-color: aliceblue;
+        font-size: 19px;
+    }
+
+    .btn_registr:active{
+        .img_arrow_in_btn{
+        transform: translateX(10px);
+        }
+    }
+
+    //значок стрелки в кнопке
+    .img_arrow_in_btn{
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        height: 40px;
+    }
+
+
+    //надпись ошибки некорректного пароля
+    .error_message{
+        color: red;
+        font-size: 18px;
+        font-weight: 600;
+        left: 36px;
+    }
+
+}
+
+
+
+
+//кнопка "Назад"
+.btn_back{
+position: absolute;
+bottom: 30px;
+left: 30px;
+height: 50px;
+width: 350px;
+background-color: whitesmoke;
+font-size: 20px;
+font-weight: 600;
+color: #3C495C;
+border-color: #435673;
+border-width: 5px;
+border-style: solid;
+border-radius: 5px;
+}
+
+.btn_back:hover{
+background-color: #435673;
+color: white;
+}
+
+.btn_back:active{
+border-color: white;
+font-size: 18px;
+}

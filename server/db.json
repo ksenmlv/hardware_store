@@ -1,0 +1,144 @@
+{
+  "all_items": [
+    {
+      "title": "Agrodone 'JT30L 606'",
+      "price": 1350000,
+      "imageUrl": "/img/drons/JOYANCE_JT30L_606.jpg",
+      "id": "7f7d"
+    },
+    {
+      "title": "Agrodrone 'IP 56'",
+      "price": 980500,
+      "imageUrl": "/img/drons/IP56.jpg",
+      "id": "eb29"
+    },
+    {
+      "title": "Agrodrone 'DJI Agras t30'",
+      "price": 1300000,
+      "imageUrl": "/img/drons/DJI_t30.jpg",
+      "id": "8516"
+    },
+    {
+      "title": "Agrodrone 'EFT s50'",
+      "price": 1276600,
+      "imageUrl": "/img/drons/EFT_s50.png",
+      "id": "2dae"
+    },
+    {
+      "title": "Consumer drone 'DJI Mavic 2 Pro'",
+      "price": 99180,
+      "imageUrl": "/img/drons/DJI_mavic_2_pro.jpg",
+      "id": "3o2n"
+    },
+    {
+      "title": "Consumer drone 'Skydio 2 Pro'",
+      "price": 99000,
+      "imageUrl": "/img/drons/skydio_2_pro.png",
+      "id": "3kj3"
+    },
+    {
+      "title": "Consumer drone 'DJI Phantom 3'",
+      "price": 37300,
+      "imageUrl": "/img/drons/DJI_phantom_3.jpg",
+      "id": "x2lk"
+    },
+    {
+      "title": "Consumer drone 'Yuneec Typhoon H Pro'",
+      "price": 115000,
+      "imageUrl": "/img/drons/yuneec_typhoon_h_pro.png",
+      "id": "gh43"
+    },
+    {
+      "title": "Delivery drone 'Amazon Prime Air'",
+      "price": 198000,
+      "imageUrl": "/img/drons/amazon_prime_air.png",
+      "id": "l9en"
+    },
+    {
+      "title": "Delivery drone 'Flytrex'",
+      "price": 54900,
+      "imageUrl": "/img/drons/flytrex.png",
+      "id": "3gt4"
+    },
+    {
+      "title": "Delivery drone 'UPS Flight Forward'",
+      "price": 90300,
+      "imageUrl": "/img/drons/UPS_flight_forward.png",
+      "id": "tc3s"
+    },
+    {
+      "title": "Delivery drone 'DHL Parcelcopter'",
+      "price": 87000,
+      "imageUrl": "/img/drons/DHL_parcelcopter.png",
+      "id": "qwc4"
+    },
+    {
+      "title": "Rotorcraft 'Optiplane s2+'",
+      "price": 2640000,
+      "imageUrl": "/img/drons/optiplane_s2.png",
+      "id": "0mw3"
+    },
+    {
+      "title": "Rescue drone 'DJI Matrice 300RTK'",
+      "price": 1800000,
+      "imageUrl": "/img/drons/DJI_matrice_300rtk.png",
+      "id": "cwt5"
+    },
+    {
+      "title": "Security drone 'Wingsland s6'",
+      "price": 25600,
+      "imageUrl": "/img/drons/wingsland_s6.jpg",
+      "id": "251k"
+    },
+    {
+      "title": "Scientific drone 'Supercam s150'",
+      "price": 76000,
+      "imageUrl": "/img/drons/supercam_s150.jpg",
+      "id": "l25n"
+    }
+  ],
+  "basket": [],
+  "users": [
+    {
+      "name": "Андрей",
+      "surname": "Рублев",
+      "login": "ruble@gmail.com",
+      "password": "Andrew123",
+      "role": "admin",
+      "id": "ea10"
+    },
+    {
+      "name": "Даниил",
+      "surname": "Медведев",
+      "login": "bear@gmail.com",
+      "password": "Bear987",
+      "role": "admin",
+      "id": "a58f"
+    },
+    {
+      "name": "Екатерина",
+      "surname": "Смирнова",
+      "login": "ekaterina.smirnova@yandex.ru",
+      "password": "Ekaterina789",
+      "role": "user",
+      "id": "3cc5"
+    },
+    {
+      "name": "Борис",
+      "surname": "Бубликов",
+      "login": "boris.bublikov@mail.ru",
+      "password": "Bublik123",
+      "role": "user",
+      "id": "0c51"
+    },
+    {
+      "name": "Галина",
+      "surname": "Гусилепова",
+      "login": "galina.gusilepova@gmail.com",
+      "password": "Gusilep456",
+      "role": "user",
+      "id": "9047"
+    }
+  ],
+  "orders": []
+}

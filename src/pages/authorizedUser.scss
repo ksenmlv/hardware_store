@@ -1,0 +1,73 @@
+.rightSide2 {
+    position: fixed;
+    width: 420px;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+
+.user_data{ 
+
+    p{
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 0;
+        
+    }
+}
+
+.user_data li{
+    font-size: 20px;
+    font-style: oblique;
+    margin-bottom: 0;
+}
+
+.gif{
+    margin-top: 100px;
+    width: 380px;
+    height: auto;
+    margin-left: 22px;
+}
+
+//иконка крестика - закрытие окна
+.btn_close_basket{
+    width: 40px;
+}
+
+//кнопка выход из аккаунта
+.btn_exit{
+    position: relative;
+    margin-left: 62px;
+    margin-top: auto;
+    margin-bottom: 60px;
+    height: 50px;
+    width: 320px;
+    font-size: 20px;
+    font-weight: 500;
+    background: rgb(244, 254, 109);
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    img{
+      position: absolute;
+      top: 17px;
+      left: 25px;
+    }
+  }
+.btn_exit:hover{
+    cursor: pointer;
+    border-color: darken($color:  rgb(254, 254, 0), $amount: 40);
+    img{
+        transform: translateX(-7px);
+    }
+}
+.btn_exit:active{
+    background: darken($color:  rgb(244, 254, 109), $amount: 20);
+}

@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFF0;
+  height: 100%;
+}
+
+//все элементы
+* {
+  font-family: 'Montserrat', system-ui;
+}
+
+.wrapper {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  max-width: 1435px;
+  margin: 50px auto;
+  position: relative;
+}
+
+//шапка(заголовок)
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-bottom: 1px solid #E6E6FA;
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+
+    p {
+      opacity: 0.7;
+    }
+  }
+
+    h3, p {
+      margin: 0;
+    }
+
+    img {
+      margin-right: 10px;
+    }
+
+  .headerRight {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    li {
+      margin-right: 30px;
+      cursor: pointer;
+    }
+    img {
+      margin: 0;
+      margin-right: 7px;
+    }
+  }
+}
+
+//вся остальная страница
+.content {
+  padding: 30px;  
+  flex: 1;
+  height: auto;
+
+
+//поиск товара
+  .header2 {
+    margin: 40px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+    //поле поиска товаров
+    .searchBlock {
+      position: relative;
+      border: 1px solid #f3f3f3;
+      padding: 0 15px;
+      display: flex;
+      border-radius:10px;
+
+      input {
+        border: 0;
+        padding: 10px;
+        outline: none;
+      }
+
+      .clearSearch {
+        position: absolute;
+        right: 0;
+        width: 27px;
+        top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .toys {
+    display: flex;
+    flex-wrap: wrap;
+   
+    span {
+      opacity: 0.5;
+    }
+  }
+}
+
+
+//карточки товаров
+.card {
+  border: 1px solid #f3f3f3;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  
+  .favourite {
+    position: absolute;
+    cursor: pointer;
+  }
+
+
+  .cardBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 22px;
+    right: 22px;
+  }
+
+  .cardBottom2 {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .plus {
+    cursor: pointer;
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 14px 30px rgba(158, 159, 67, 0.927);
+  transform: translateY(-5px);
+}
+
+
+// .button {
+//   background: #FFFFFF;
+//   border: 3px solid #f1f1f1;
+//   box-sizing: border-box;
+//   border-radius: 10px;
+//   height: 30px;
+//   width: 30px;
+//   cursor: pointer;
+//   }
+
+  
+//линия заголовка перед карточками
+.header2 {
+  display: flex;
+  align-items: center;
+}
+
+//правая панель с корзиной
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;   //элементы с большим значением отображаются поверх элементов с меньшим значением
+
+  .rightSide {
+    position: fixed;
+    width: 420px;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  h2 {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    //не работает (иконка закрытия корзины)
+    .btn_close_basket:hover {
+      opacity: 1;
+      cursor: pointer;
+      transition: opacity 0.15s ease-in-out;
+    }
+  }
+
+  .items {
+    margin-bottom: 10px;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  //итого и кнопка заказа
+  .order_summary {
+    margin-top: auto;
+
+    div {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #DFDFDF;
+      position: relative;
+      top: -4px;
+      margin: 0 7px;
+    }
+  }
+
+  
+  //кнопка "заказать"
+  .btn_order {
+    position: relative;
+    left: 165px;
+    width: 230px;
+    height: 50px;
+    font-size: large;
+    background: rgb(244, 254, 109);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: 50px;
+    
+    img {
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+  .btn_order:hover {
+    cursor: pointer;
+    border-color: darken($color:  rgb(254, 254, 0), $amount: 40);
+    img{
+      transform: translateX(7px);
+    }
+    
+  }
+  .btn_order:active {
+    background: darken($color:  rgb(244, 254, 109), $amount: 20);
+  }
+
+}
+
+//карточка товара в корзине
+.cardItem {
+  position: relative;
+  height: 75px;
+  border: 1px solid #f1f1f1;
+  border-radius: 20px;
+  margin: 3px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;   //то, что выходит за границы - обрезается
+  padding-bottom: 20px;
+
+  p {
+    margin-right: 10px;
+    font-size: 17px;
+  }
+
+  .img_item {
+    width: 80px;
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+
+  .btn_cancel {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    opacity: 0.5;
+  }
+  .btn_cancel:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+}
+
+
+//счетчик итоговой стоимости
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    margin-right: 15px;
+  }
+}
+
+
+//пустая корзина(иконка, текст, кнопка для возврата назад)
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 240px;
+
+  .cart{
+    height: 180px;
+  }
+  h2{
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  p{
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  button{
+    position: relative;
+    height: 40px;
+    width: 220px;
+    font-size: large;
+    font-weight: 500;
+    background: rgb(244, 254, 109);
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    img{
+      position: absolute;
+      top: 12px;
+      left: 25px;
+    }
+  }
+  button:hover{
+    cursor: pointer;
+    border-color: darken($color:  rgb(254, 254, 0), $amount: 40);
+    img{
+      transform: translateX(-7px);
+    }
+  }
+  button:active{
+    background: darken($color:  rgb(244, 254, 109), $amount: 20);
+  }
+}
+
+
+
