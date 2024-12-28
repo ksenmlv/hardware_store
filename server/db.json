@@ -97,7 +97,26 @@
       "id": "l25n"
     }
   ],
-  "basket": [],
+  "basket": [
+    {
+      "id": "3o2n",
+      "title": "Consumer drone 'DJI Mavic 2 Pro'",
+      "price": 99180,
+      "imageUrl": "/img/drons/DJI_mavic_2_pro.jpg"
+    },
+    {
+      "id": "cwt5",
+      "title": "Rescue drone 'DJI Matrice 300RTK'",
+      "price": 1800000,
+      "imageUrl": "/img/drons/DJI_matrice_300rtk.png"
+    },
+    {
+      "id": "eb29",
+      "title": "Agrodrone 'IP 56'",
+      "price": 980500,
+      "imageUrl": "/img/drons/IP56.jpg"
+    }
+  ],
   "users": [
     {
       "name": "Андрей",
@@ -140,5 +159,26 @@
       "id": "9047"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "clientName": "Галина Гусилепова",
+      "login": "galina.gusilepova@gmail.com",
+      "totalSum": 2089098,
+      "orderedProducts": [
+        "Rescue drone 'DJI Matrice 300RTK'",
+        "Consumer drone 'DJI Mavic 2 Pro'"
+      ]
+    },
+    {
+      "id": "e24f",
+      "clientName": "Андрей",
+      "login": "ruble@gmail.com",
+      "totalSum": 2879680,
+      "orderedProducts": [
+        "Consumer drone 'DJI Mavic 2 Pro'",
+        "Rescue drone 'DJI Matrice 300RTK'",
+        "Agrodrone 'IP 56'"
+      ]
+    }
+  ]
 }

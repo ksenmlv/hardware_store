@@ -1,14 +1,24 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-function Header({totalPrice, onClickCard, isAuthenticated}) {
+function Header({totalPrice, onClickCard, onClickProfile, isAuthenticated}) {
     const location = useLocation()
+    const navigate = useNavigate()
     const isHomePage = location.pathname === '/' 
+
+    const handleClickProfile = () => {
+        if (isAuthenticated) {
+            onClickProfile()
+        } else {
+            navigate('user_enter')
+        }
+    }
+
 
     return(
         <header>
             {/*левая часть заголовка*/}  
             <div className='headerLeft'>
-                <Link to="/" exact>
+                <Link to="/">
                     <img width={60} height={60} src="/img/logo.jpg" />
                 </Link>
                 <div>
@@ -25,10 +35,12 @@ function Header({totalPrice, onClickCard, isAuthenticated}) {
                     <img width={18} height={18} src="/img/basket.svg" />
                     <span>{totalPrice}₽</span>
                 </li>
-                <li>
-                    <Link to={isAuthenticated ? '/authorized_user' : '/user_enter'}>
+                <li onClick={handleClickProfile}>
+                    <img width={18} height={18} src="/img/user.svg" />
+
+                    {/* <Link to={isAuthenticated ? {onClickProfile} : '/user_enter'}>
                         <img width={18} height={18} src="/img/user.svg" />
-                    </Link>
+                    </Link> */}
                 </li>
                 </ul>
             )}

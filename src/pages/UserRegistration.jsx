@@ -1,4 +1,4 @@
-import './userRegistr.scss'
+import '../styles_scss/userRegistr.scss'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import bcrypt from 'bcryptjs'

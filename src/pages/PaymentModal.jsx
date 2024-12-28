@@ -1,28 +1,65 @@
 import React from "react";
-import './PaymentModal.scss'
-import { useNavigate } from "react-router-dom";
+import '../styles_scss/paymentModal.scss'
+import axios from "axios";
 
 
-function PaymentModal({onClose, setIsModalOpen, setBasketItems}) {
+function PaymentModal({onClose, setIsModalOpen, basketItems, totalPrice, setBasketItems, setIsSuccessfulPaymentOpened, orders, setOrders, userData}) { 
 
-    //const navigate = useNavigate()    
+    //добавление заказа на сервер
+    const addOrder = async (clientName, login, totalSum, orderedProducts) => {
+            //создание нового заказа
+            const newOrder = {
+                clientName: clientName,
+                login: login,
+                totalSum: totalSum,
+                orderedProducts: orderedProducts
+            }
 
-    //оплата и закрытие окна
-    const hadlePayAndClose = () => {
+            try {
+                //отправка нового заказа на сервер
+                const response = await axios.post('http://localhost:3001/orders', newOrder)
+
+                setOrders(prevOrders => [...prevOrders, response.data])
+                alert('Заказ успешно оформлен!')
+            } catch (error) {
+                console.error('Ошибка при отправке заказа на сервер:', error)
+                alert('Произошла ошибка при оформлении заказа. Пожалуйста, попробуйте снова.')
+            }
+    }
+
+
+
+    //оплата и закрытие окна 
+    const hadlePayAndClose = async () => {
         const nameInput = document.querySelector('.input-long').value
         const dateInput = document.querySelector('.input-short').value
         const cardNumberInput = document.querySelectorAll('.input-long')[1].value
         const cvvInput = document.querySelectorAll('.input-short')[1].value
 
         if (nameInput && dateInput && cardNumberInput && cvvInput) {
-            alert('Заказ успешно оформлен!')
-            setBasketItems([])
+            //получение данных клиента из localStorage
+            const storedUserData = localStorage.getItem('userData')
+            const userData = JSON.parse(storedUserData)          //преобразуем JSON-строку в объект js, тк localStorage хранит данные в виде строк
+
+            //получение данных из корзины
+            const orderedProducts = basketItems.map(item => item.title)   //создание нового массива, который берет только свойство title от каждого объекта 
+            const totalSum = totalPrice   
+
+            //добавление нового заказа на сервер
+            addOrder(userData.name, userData.login, totalSum, orderedProducts)
+
+
+            setBasketItems([])                         //очистка корзины
             setIsModalOpen(false)
+            setIsSuccessfulPaymentOpened(true)
         } else {
             alert('Заполните, пожалуйста, все поля')
         }
 
     }
+
+
+
 
     //валидация на ввод букв
     const handleInputWords = (e) => {

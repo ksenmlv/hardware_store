@@ -1,7 +1,24 @@
 import Card from '../components/Card';
 
-function Home({items, searchValue, setSearchValue, onChangeSearchValue, onAddToBasket, basketItems}) {
+function Home({items, searchValue, setSearchValue, onChangeSearchValue, onAddToBasket, basketItems, isLoading}) {
   
+  const renderItems = () => {
+    const filteredItems = items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+
+    return (isLoading ? [...Array(16)].map((_, index) => (
+      <Card key={index} loading={true} />
+    )) : filteredItems.map(item => (
+        <Card
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          imageUrl={item.imageUrl}
+          onClickPlus={() => onAddToBasket(item)}
+          basketItems={basketItems}
+          loading={isLoading}
+        />
+      )))
+  }
 
     return (
         <div className="content">
@@ -26,18 +43,7 @@ function Home({items, searchValue, setSearchValue, onChangeSearchValue, onAddToB
           </div>
     
           <div className="toys">
-            {items
-              .filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()))
-              .map(item => (
-                <Card
-                  key={item.id}
-                  title={item.title}
-                  price={item.price}
-                  imageUrl={item.imageUrl}
-                  onClickPlus={() => onAddToBasket(item)}
-                  basketItems={basketItems}
-                />
-              ))}
+            {renderItems()}         
           </div>
         </div>
     );

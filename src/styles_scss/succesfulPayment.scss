@@ -1,0 +1,75 @@
+//правая панель 
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;   //элементы с большим значением отображаются поверх элементов с меньшим значением
+  
+    .rightSide {
+      position: fixed;
+      width: 420px;
+      height: 100vh;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #FFFFFF;
+      box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+}
+
+.successModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 240px;
+
+    h2{
+        font-size: 30px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+
+    .success_img{
+        height: 200px;
+    }
+
+    p{
+        display: flex;
+        font-size: 18px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    button{
+        position: relative;
+        height: 40px;
+        width: 220px;
+        font-size: large;
+        font-weight: 500;
+        background: rgb(244, 254, 109);
+        border: 2px solid transparent;
+        transition: border 0.3s ease-in-out;
+        img{
+            position: absolute;
+            top: 12px;
+            left: 25px;
+        }
+    }
+      button:hover{
+        cursor: pointer;
+        border-color: darken($color:  rgb(254, 254, 0), $amount: 40);
+        img{
+          transform: translateX(-7px);
+        }
+      }
+      button:active{
+        background: darken($color:  rgb(244, 254, 109), $amount: 20);
+      }
+}

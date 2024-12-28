@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PaymentModal from "../pages/PaymentModal";
 
 
-function RightBasket({onClose, onRemove, items=[], setTotalPrice, setBasketItems, isAuthenticated}) {
+function RightBasket({onClose, onRemove, items=[], setTotalPrice, basketItems, orders, setOrders, setBasketItems, isAuthenticated, setIsSuccessfulPaymentOpened, userData}) {
     //модальное окно для оплаты заказа
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -26,7 +26,7 @@ function RightBasket({onClose, onRemove, items=[], setTotalPrice, setBasketItems
     }
 
     //функция для закрытия модального окна
-    const handleCLoseModal = () => {
+    const handleCloseModal = () => {
         setIsModalOpen(false)
     }
     
@@ -80,7 +80,7 @@ function RightBasket({onClose, onRemove, items=[], setTotalPrice, setBasketItems
 
           </div>
 
-          {isModalOpen && <PaymentModal onClose={handleCLoseModal} setIsModalOpen={setIsModalOpen} setBasketItems={setBasketItems} />}
+          {isModalOpen && <PaymentModal onClose={handleCloseModal} setIsModalOpen={setIsModalOpen} basketItems={basketItems} totalPrice={totalPrice} setBasketItems={setBasketItems} setIsSuccessfulPaymentOpened={setIsSuccessfulPaymentOpened} orders={orders} setOrders={setOrders} userData={userData}/>}
 
         </div>
     )

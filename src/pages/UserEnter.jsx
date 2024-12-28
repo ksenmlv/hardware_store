@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './userEnter.scss'
+import '../styles_scss/userEnter.scss'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -14,7 +14,6 @@ function User_enter( {setIsAuthenticated, setUserData} ) {
         axios.get('http://localhost:3001/users')
             .then(res => {
                 setUsers(res.data)
-                console.log(res.data)
             })
             .catch(error => {
                 console.error('Ошибка при получении данных о пользователе:', error);
@@ -68,7 +67,7 @@ function User_enter( {setIsAuthenticated, setUserData} ) {
                     </form>
                     
                     <div className='text_with_image'>
-                        <img src='/img/login_form/Vector.png' alt="Background Image" class="pic_under_text" />
+                        <img src='/img/login_form/Vector.png' alt="Background Image" className="pic_under_text" />
                         <p>Нет аккаунта? <Link to='/user_registration'>Зарегистрироваться</Link></p>
                     </div>
                     
